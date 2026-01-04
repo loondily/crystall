@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# === ROBOTS.TXT ===
+# Отдаем robots.txt напрямую
+#RewriteCond %{REQUEST_URI} ^/robots\.txt$ [NC]
+#RewriteRule ^.*$ - [L]
+
+# === SPA ROUTING ===
+# Если файл или папка существуют — отдаем как есть
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ index.html [L]

@@ -11,6 +11,7 @@ export default function ScrollToTariffsButton() {
     
     const handleScroll = () => {
       const tariffsSection = document.querySelector('#tariffs-section') || document.getElementById('tariffs');
+      const footer = document.querySelector('footer');
       
       if (!tariffsSection) {
         setIsVisible(false);
@@ -20,6 +21,26 @@ export default function ScrollToTariffsButton() {
       const tariffsRect = tariffsSection.getBoundingClientRect();
       const scrollY = window.scrollY || window.pageYOffset;
       const viewportHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // Проверяем, доскроллил ли пользователь до конца футера
+      // Кнопка скрывается когда пользователь доскроллил до конца страницы
+      // (когда scrollY + viewportHeight близко к documentHeight)
+      const isAtBottom = scrollY + viewportHeight >= documentHeight - 50; // 50px допуск
+      
+      // Также проверяем, если футер виден полностью
+      let isFooterVisible = false;
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+        // Если верх футера виден и нижняя часть футера близка к низу экрана
+        isFooterVisible = footerRect.top < viewportHeight && footerRect.bottom <= viewportHeight + 50;
+      }
+      
+      // Если пользователь доскроллил до конца футера - скрываем кнопку
+      if (isAtBottom || isFooterVisible) {
+        setIsVisible(false);
+        return;
+      }
       
       // Определяем, находится ли пользователь на секции тарифов
       // Кнопка скрывается когда секция тарифов видна на экране:
