@@ -14,7 +14,7 @@ export default function AdvantegesSection () {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
       <div className="relative order-2 lg:order-1">
         <img
-          src="https://avatars.mds.yandex.net/get-altay/4043748/2a00000176c359b040e6b5eea60bd459d96c/XXXL"
+          src="../public/adv.png"
           alt="Офисное пространство"
           className="w-full h-[300px] sm:h-[420px] md:h-[520px] lg:h-[680px] object-cover rounded-2xl shadow-md"
           itemProp="image"
