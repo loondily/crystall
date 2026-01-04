@@ -24,14 +24,14 @@ export default function HeroKoworking({ onBookingOpen }) {
     ];
 
     return (
-        <section className="relative min-h-[600px] pt-10 md:pt-0 md:min-h-screen overflow-hidden">
+        <section className="relative min-h-[600px] pt-10 md:min-h-[90vh] overflow-hidden">
             {/* ГРАДИЕНТНЫЙ ФОН */}
             <div className="absolute inset-0 z-0 bg-gradient-to-br from-blue-50 via-white to-purple-50">
                 <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-blue-100/30 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-purple-100/20 rounded-full blur-3xl"></div>
             </div>
             
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-32">
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20">
                 <div className="flex flex-col lg:flex-row-reverse items-start gap-6 sm:gap-8 lg:gap-12 xl:gap-20">
                     
                     {/* ИЗОБРАЖЕНИЕ */}
